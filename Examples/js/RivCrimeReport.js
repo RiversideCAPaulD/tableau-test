@@ -7,7 +7,7 @@
         var cols = [{
             id: "id",
             dataType: tableau.dataTypeEnum.string
-        },;
+        }];
 
         var tableSchema = {
             id: "earthquakeFeed",
