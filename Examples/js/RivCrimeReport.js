@@ -7,23 +7,7 @@
         var cols = [{
             id: "id",
             dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "mag",
-            alias: "magnitude",
-            dataType: tableau.dataTypeEnum.float
-        }, {
-            id: "title",
-            alias: "title",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "lat",
-            alias: "latitude",
-            dataType: tableau.dataTypeEnum.float
-        }, {
-            id: "lon",
-            alias: "longitude",
-            dataType: tableau.dataTypeEnum.float
-        }];
+        },;
 
         var tableSchema = {
             id: "earthquakeFeed",
@@ -44,10 +28,7 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     "id": feat[i].id,
-                    "mag": feat[i].properties.mag,
-                    "title": feat[i].properties.title,
-                    "lon": feat[i].geometry.coordinates[0],
-                    "lat": feat[i].geometry.coordinates[1]
+                    
                 });
             }
 
