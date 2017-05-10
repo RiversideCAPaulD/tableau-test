@@ -26,8 +26,8 @@
         }];
 
         var tableSchema = {
-            id: "crime",
-            alias: "Crime",
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
             columns: cols
         };
 
@@ -61,7 +61,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Crime"; // This will be the data source name in Tableau
+            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
