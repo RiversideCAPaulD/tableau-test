@@ -8,14 +8,26 @@
             id: "id",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "blockAddress",
-            alias: "Block",
+            id: "mag",
+            alias: "magnitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "title",
+            alias: "title",
             dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "lat",
+            alias: "latitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "lon",
+            alias: "longitude",
+            dataType: tableau.dataTypeEnum.float
         }];
 
         var tableSchema = {
-            id: "crimeFeed",
-            alias: "Riverside Crime",
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
             columns: cols
         };
 
@@ -24,7 +36,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://riversideca.gov/transparency/data/dataset/jsonfull/27/Crime_Reports", function(resp) {
+        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
@@ -32,8 +44,10 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     "id": feat[i].id,
-                    "blockAddress": feat[i].properties.mag,
-                    
+                    "mag": feat[i].properties.mag,
+                    "title": feat[i].properties.title,
+                    "lon": feat[i].geometry.coordinates[0],
+                    "lat": feat[i].geometry.coordinates[1]
                 });
             }
 
@@ -47,7 +61,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "Riverside Crime"; // This will be the data source name in Tableau
+            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
