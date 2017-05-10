@@ -10,7 +10,7 @@
         }];
 
         var tableSchema = {
-            id: "earthquakeFeed",
+            id: "Crime",
             alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
             columns: cols
         };
