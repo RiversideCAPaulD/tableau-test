@@ -21,7 +21,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
+        $.getJSON("http://riversideca.gov/transparency/data/dataset/json/21/Fire_Stations", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
