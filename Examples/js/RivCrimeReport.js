@@ -6,6 +6,7 @@
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "Type",
+            alias: "title",
             dataType: tableau.dataTypeEnum.string
         }];
 
