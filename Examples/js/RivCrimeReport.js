@@ -27,7 +27,7 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "Type": feat[i].Type,
+                    "Type": feat[i].properties.Type,
                     
                 });
             }
