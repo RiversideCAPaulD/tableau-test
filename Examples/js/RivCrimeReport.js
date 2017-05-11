@@ -20,7 +20,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://riversideca.gov/transparency/data/dataset/json/21/Fire_Stations", function(resp) {
+        $.getJSON("http://riversideca.gov/transparency/data/dataset/jsonfull/21/Fire_Stations", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
