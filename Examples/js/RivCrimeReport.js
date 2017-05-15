@@ -20,14 +20,14 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://riversideca.gov/transparency/data/dataset/jsonfull/21/Fire_Stations", function(resp) {
+        $.getJSON("http://riversideca.gov/transparency/data/dataset/json/27/Crime_Reports", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "caseNumber": feat[i].caseNumber,
+                    "caseNumber": feat[i].properties.caseNumber,
                     
                 });
             }
