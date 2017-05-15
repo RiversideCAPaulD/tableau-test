@@ -9,8 +9,8 @@
             dataType: tableau.dataTypeEnum.string
 
         var tableSchema = {
-            id: "Crime_Reports",
-            alias: "Crime",
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
             columns: cols
         };
 
@@ -19,7 +19,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://riversideca.gov/transparency/data/dataset/json/27/Crime_Reports", function(resp) {
+        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27/Crime_Reports", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
