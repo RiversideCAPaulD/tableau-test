@@ -21,7 +21,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27/Crime_Reports", function(resp) {
+        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
