@@ -5,7 +5,7 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "title",
+            id: "npc",
             alias: "title",
             dataType: tableau.dataTypeEnum.string
         }];
@@ -21,7 +21,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
+        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27/Crime_Reports", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
@@ -29,7 +29,7 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     
-                    "title": feat[i].properties.title,
+                    "npc": feat[i].properties.npc,
                     
                 });
             }
