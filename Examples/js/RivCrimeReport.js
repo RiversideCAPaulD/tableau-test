@@ -5,12 +5,11 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "caseNumber",
+            id: "_id",
             dataType: tableau.dataTypeEnum.string
-        }];
 
         var tableSchema = {
-            id: "Crime",
+            id: "Crime_Reports",
             alias: "Crime",
             columns: cols
         };
@@ -27,7 +26,7 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "caseNumber": feat[i].properties.caseNumber,
+                    "_id": feat[i].properties._id,
                     
                 });
             }
