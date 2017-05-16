@@ -6,13 +6,13 @@
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "npc",
-            alias: "title",
+            alias: "npc",
             dataType: tableau.dataTypeEnum.string
         }];
 
         var tableSchema = {
-            id: "earthquakeFeed",
-            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
+            id: "riversideCrime",
+            alias: "Riverside Crime Top 20 JSON entries",
             columns: cols
         };
 
@@ -44,7 +44,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-            tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
+            tableau.connectionName = "Riverside Crime Report"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
