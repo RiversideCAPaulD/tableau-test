@@ -12,7 +12,7 @@
 
         var tableSchema = {
             id: "riversideCrime",
-            alias: "Riverside Crime Top 20 JSON entries",
+            alias: "Riverside Crime JSON entries",
             columns: cols
         };
 
