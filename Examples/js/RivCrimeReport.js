@@ -5,7 +5,7 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [
-		{ id : "npc",  alias : "POC", dataType : tableau.dataTypeEnum.string }
+		{ id : "npc",  alias : "Npc", dataType : tableau.dataTypeEnum.string }
 		];
 		
 		
@@ -29,7 +29,7 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     
-                    "npc": feat[i].npc,
+                    "npc": feat[i]..npc,
 					
 					                    
                 });
