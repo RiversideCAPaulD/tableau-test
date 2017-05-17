@@ -21,7 +21,10 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27");
+        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27")
+	    function(data) {
+            tableData = [];
+	   
 
             // Iterate over the JSON object
             for (var i = 0; i < len; i++) {
