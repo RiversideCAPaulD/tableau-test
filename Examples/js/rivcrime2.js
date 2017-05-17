@@ -21,7 +21,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27", function(resp) {
+        $.getJSON("http://riversideca.gov/transparency/data/dataset/jsonfull/27/Crime_Reports", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
@@ -29,7 +29,7 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     
-                    "npc": feat[i]..npc,
+                    "npc": data[i].npc,
 					
 					                    
                 });
