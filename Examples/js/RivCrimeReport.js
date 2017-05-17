@@ -5,7 +5,7 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [
-		{ id : "npc",  alias : "Npc", dataType : tableau.dataTypeEnum.string }
+		{ id : "npc",  alias : "POC", dataType : tableau.dataTypeEnum.string }
 		];
 		
 		
@@ -21,15 +21,13 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://riversideca.gov/transparency/data/dataset/jsonfull/27/Crime_Reports", function(resp) {
-            
-                tableData = [];
+        $.getJSON("https://riversideca.gov/transparency/data/dataset/json/27");
 
             // Iterate over the JSON object
-            for (var i = 0, len = feat.length; i < len; i++) {
+            for (var i = 0; i < len; i++) {
                 tableData.push({
                     
-                    data[i].npc,
+                    "npc": data[i]["npc"],
 					
 					                    
                 });
