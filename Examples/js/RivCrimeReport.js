@@ -4,11 +4,11 @@
 
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
-        var cols = [{
-            id: "npc",
-            alias: "npc",
-            dataType: tableau.dataTypeEnum.string
-        }];
+        var cols = [
+		{ id : "npc",  alias : "POC", dataType : tableau.dataTypeEnum.string }
+		];
+		
+		
 
         var tableSchema = {
             id: "riversideCrime",
