@@ -29,7 +29,7 @@
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
                     
-                    "npc": feat[i].npc,
+                    "npc": feat[i]..npc,
 					
 					                    
                 });
